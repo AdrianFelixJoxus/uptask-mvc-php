@@ -1,0 +1,47 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+@use "sass:color";
+
+.dashboard {
+    background-color: v.$grisClaro;
+
+    @include m.tablet {
+        display: flex;
+        height: 100vh; // Viweport height
+    }
+
+    .principal {
+        flex: 1;// Permite que tome todo el espacio disponible 
+        overflow: scroll;
+    }
+
+    .contenido {
+        padding: 2rem;
+        .nombre-pagina {
+            font-size: 3rem;
+            text-align: center;
+
+        }
+    }
+
+    .formulario {
+        input:not([type="submit"]) {
+            background-color: v.$blanco;
+        }
+        input[type="submit"] {
+            @include m.boton(v.$indigo, v.$blanco);
+            @include m.tablet {
+                padding: 1.5rem;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .enlace {
+        color: v.$indigo;
+        &:hover {
+            color: color.adjust(v.$indigo, $blackness:40%) ;
+        }
+    }
+}
