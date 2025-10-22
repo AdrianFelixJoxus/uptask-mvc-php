@@ -1,5 +1,9 @@
 <?php
 
+
+
+//$db = mysqli_connect('localhost', 'root', 'root', 'uptask_mvc');
+
 $db = mysqli_connect(
     $_ENV['DB_HOST'] ?? '',
     $_ENV['DB_USER'] ?? '', 
